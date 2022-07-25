@@ -9,7 +9,5 @@ ConnectionTimeout=60
 CommandTimeout=3600
 SecondsToWait=5
 orderby=order by req.database_id
-ViewType=#statement_text#,#database_id#,#program_name#,#session_id#,#cpu_time_ms#,#status#,#blocking_session_id#,#last_wait_type#,#wait_resource#,#BlockedQuery#
+ViewType=#statement_text#,#database_id#,#program_name#,#session_id#,#cpu_time_ms#,#status#,#blocking_session_id#,#last_wait_type#,#wait_resource#,#BlockerQuery#
 MaxLenStatement=4000
-
-
