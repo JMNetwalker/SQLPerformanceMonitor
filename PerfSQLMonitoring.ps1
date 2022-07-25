@@ -48,7 +48,7 @@ function CheckStatusPerRequestAdHoc($connection)
                             , req.reads as reads 
                             , req.logical_reads as logical_reads
                             , blocking_session_id as blocking_session_id
-                            , CASE blocking_session_id WHEN 0 THEN 'Noblocking' ELSE ( select t.text as BlockerQuery FROM sys.dm_exec_connections as connblocker cross apply sys.dm_exec_sql_text(connblocker.most_recent_sql_handle) AS T where blocking_session_id=connblocker.session_id ) end AS BlockedQuery
+                            , CASE blocking_session_id WHEN 0 THEN 'Noblocking' ELSE ( select t.text as BlockerQuery FROM sys.dm_exec_connections as connblocker cross apply sys.dm_exec_sql_text(connblocker.most_recent_sql_handle) AS T where blocking_session_id=connblocker.session_id ) end AS BlockerQuery
                             , host_name as host_name
                             , host_process_id as host_process_id
                             , login_time as login_time
